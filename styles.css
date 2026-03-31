@@ -582,6 +582,23 @@ button {
   color: var(--bg);
 }
 
+.card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.card-title-row h4 {
+  margin: 0;
+}
+
+.card-title-row .card-cta {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  font-size: 7px;
+}
+
 .card-info {
   padding: 20px 0 0;
   border-top: 1px solid var(--line);
