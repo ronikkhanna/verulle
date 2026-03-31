@@ -124,7 +124,7 @@
     <div class="elements-grid">
 
       <div class="element-card reveal" data-id="ignis">
-        <div class="card-img-wrap">
+        <div class="card-img-wrap" onclick="openModal('ignis')">
           <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493304469/3nJp4nxjGcBAquAvrymd3g/IMG_7578_97777c8f.jpeg" alt="IGNIS · Deep Burgundy" loading="lazy" />
           <div class="card-overlay">
             <div class="card-overlay-content">
@@ -144,7 +144,7 @@
       </div>
 
       <div class="element-card reveal" data-id="terra">
-        <div class="card-img-wrap">
+        <div class="card-img-wrap" onclick="openModal('terra')">
           <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493304469/3nJp4nxjGcBAquAvrymd3g/IMG_7582_8f78057b.jpeg" alt="TERRA · Olive Melange" loading="lazy" />
           <div class="card-overlay">
             <div class="card-overlay-content">
@@ -164,7 +164,7 @@
       </div>
 
       <div class="element-card reveal" data-id="aether">
-        <div class="card-img-wrap">
+        <div class="card-img-wrap" onclick="openModal('aether')">
           <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493304469/3nJp4nxjGcBAquAvrymd3g/moody_luxury_purple_mohair_sweater_8b61615e.png" alt="AETHER · Royal Amethyst" loading="lazy" />
           <div class="card-overlay">
             <div class="card-overlay-content">
@@ -184,7 +184,7 @@
       </div>
 
       <div class="element-card reveal" data-id="aqua">
-        <div class="card-img-wrap">
+        <div class="card-img-wrap" onclick="openModal('aqua')">
           <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663493304469/3nJp4nxjGcBAquAvrymd3g/IMG_7580_7e5e10f2.jpeg" alt="AQUA · Navy" loading="lazy" />
           <div class="card-overlay">
             <div class="card-overlay-content">
@@ -213,7 +213,7 @@
     <!-- COSMOS PRODUCTS -->
     <div class="elements-grid reveal">
       <div class="element-card" onclick="openModal('cosmos')">
-        <div class="card-img-wrap">
+        <div class="card-img-wrap" onclick="openModal('cosmos'); event.stopPropagation();">
           <img src="cosmos.png" alt="COSMOS - Starry Night" loading="lazy" />
           <div class="card-overlay">
             <div class="card-overlay-content">
@@ -233,7 +233,7 @@
       </div>
 
       <div class="element-card" onclick="openModal('cosmos-celestial')">
-        <div class="card-img-wrap">
+        <div class="card-img-wrap" onclick="openModal('cosmos-celestial'); event.stopPropagation();">
           <img src="cosmos-celestial.png" alt="COSMOS - Celestial" loading="lazy" />
           <div class="card-overlay">
             <div class="card-overlay-content">

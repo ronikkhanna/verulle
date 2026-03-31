@@ -493,6 +493,7 @@ button {
   aspect-ratio: 3/4;
   overflow: hidden;
   background: var(--surface);
+  cursor: pointer;
 }
 
 .card-img-wrap img {
