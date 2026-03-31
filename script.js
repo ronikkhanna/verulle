@@ -233,21 +233,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ── "Read More" expandable content ────────────────────
-document.querySelectorAll('.text-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    if (this.getAttribute('href') === '#') {
-      e.preventDefault();
-      const article = this.closest('article');
-      if (article) {
-        article.classList.toggle('expanded');
-        const expanded = article.classList.contains('expanded');
-        this.innerHTML = expanded ? 'Read less <span>←</span>' : 'Read more <span>→</span>';
-      }
-    }
-  });
-});
-
 // ── Shopping Cart ────────────────────────────────────
 let cart = [];
 
