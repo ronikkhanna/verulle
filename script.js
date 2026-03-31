@@ -77,7 +77,7 @@ const products = {
     care: 'Hand wash in cold water. Lay flat to dry. Avoid pilling by limiting friction.',
   },
   cosmos: {
-    name: 'COSMOS',
+    name: 'COSMOS - Starry Night',
     color: 'Stellar Midnight',
     description: 'The infinite expanse of the night sky, captured in every thread. Luminous flecks of metallic mohair shimmer against a deep midnight ground — a garment that moves with the cosmos.',
     image: 'cosmos.png',
@@ -95,7 +95,7 @@ const products = {
     care: 'Hand wash in cold water. Lay flat to dry. Avoid pilling by limiting friction.',
   },
   'cosmos-celestial': {
-    name: 'COSMOS II',
+    name: 'COSMOS - Celestial',
     color: 'Celestial Gold',
     description: 'Where the Milky Way meets mohair. A supernova rendered in golden thread against the deepest black — wear the universe.',
     image: 'cosmos-celestial.png',
