@@ -607,6 +607,12 @@ button {
   gap: 2px;
 }
 
+/* Featured card wrapper for single element */
+.featured-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Twin cosmos cards side by side */
 .cosmos-twin {
   display: grid;
@@ -655,6 +661,9 @@ button {
   .elements-featured {
     grid-template-columns: 1fr;
     padding: 0 24px;
+  }
+  .featured-card-wrapper {
+    max-height: 60vh;
   }
   .element-card--featured .card-img-wrap {
     aspect-ratio: 3/4;
