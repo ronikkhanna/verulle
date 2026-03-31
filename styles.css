@@ -343,7 +343,7 @@ button {
 .section-label {
   display: block;
   font-family: var(--font-sans);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -513,16 +513,16 @@ button {
   display: flex;
   align-items: flex-end;
   padding: 32px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.45s ease;
 }
-.element-card:hover .card-overlay { opacity: 1; }
+.element-card:hover .card-overlay { opacity: 0; }
 
 .card-overlay-content {
-  transform: translateY(16px);
+  transform: translateY(0);
   transition: transform 0.45s ease;
 }
-.element-card:hover .card-overlay-content { transform: translateY(0); }
+.element-card:hover .card-overlay-content { transform: translateY(16px); }
 
 .card-element-name {
   font-family: var(--font-display);
