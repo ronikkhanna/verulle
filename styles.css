@@ -37,7 +37,15 @@ body {
 img { display: block; width: 100%; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
-button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
 
 
 /* ============================================================
@@ -105,8 +113,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 }
 
 .icon-btn {
-  width: 40px; height: 40px;
-  display: flex; align-items: center; justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--cream-dim);
   border-radius: 4px;
   transition: color 0.25s, background 0.25s;
@@ -235,7 +248,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 }
 
 .btn-ghost {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
   margin-top: 48px;
   padding: 14px 40px;
   font-family: var(--font-sans);
@@ -543,8 +559,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   text-transform: uppercase;
   color: var(--cream);
   padding: 10px 24px;
+  min-height: 44px;
   border: 1px solid rgba(240,235,224,0.3);
   transition: background 0.3s, border-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card-cta:hover {
   background: var(--gold);
@@ -767,12 +787,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   border: none;
   outline: none;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.06em;
   color: var(--cream);
   padding: 16px 0;
   caret-color: var(--gold);
+  -webkit-appearance: none;
+  appearance: none;
 }
 .newsletter-field input::placeholder { color: var(--muted); }
 
@@ -832,6 +854,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   letter-spacing: 0.06em;
   color: var(--muted);
   transition: color 0.25s;
+  display: block;
+  padding: 4px 0;
 }
 .footer-col a:hover { color: var(--cream); }
 
@@ -899,9 +923,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 
 .modal-close {
   position: absolute;
-  top: 20px; right: 20px;
-  width: 40px; height: 40px;
-  display: flex; align-items: center; justify-content: center;
+  top: 20px;
+  right: 20px;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--muted);
   border: 1px solid var(--line);
   transition: color 0.25s, border-color 0.25s;
@@ -912,6 +942,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 .modal-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 .modal-img-wrap {
@@ -1137,31 +1169,182 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .mobile-menu-btn { display: flex; }
+  .mobile-menu-btn { width: 48px; height: 48px; }
 
-  .nav-inner { padding: 0 24px; }
+  .nav-inner { padding: 0 16px; height: 64px; }
+  .nav-logo { font-size: clamp(32px, 8vw, 38px); }
 
-  .hero-headline { font-size: clamp(60px, 16vw, 100px); }
+  .hero {
+    min-height: 550px;
+  }
+  .hero-headline { font-size: clamp(48px, 14vw, 100px); }
+  .hero-eyebrow { font-size: 9px; margin-bottom: 20px; }
+  .hero-tagline { font-size: 10px; margin-top: 12px; }
+  .hero-sub { font-size: 12px; margin-top: 12px; }
+  .btn-ghost {
+    margin-top: 32px;
+    padding: 12px 32px;
+    font-size: 9px;
+  }
+  .hero-scroll-hint { bottom: 24px; gap: 8px; }
+  .hero-scroll-hint span { font-size: 8px; }
+  .scroll-line { height: 30px; }
 
-  .elements-grid { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; }
-  .elements-header { padding: 0 24px; }
-  .craft-inner { padding: 0 24px; }
+  .marquee-track { gap: 24px; }
+  .marquee-track span { font-size: 8px; }
+
+  .craftsmanship { padding: 80px 0; }
+  .craft-inner {
+    padding: 0 16px;
+    gap: 36px;
+  }
+  .craft-left { top: 80px; }
+  .craft-quote { font-size: clamp(28px, 3vw, 36px); }
+  .craft-meta { font-size: 11px; }
+  .craft-article h3 { font-size: clamp(20px, 2vw, 28px); }
+  .craft-article p { font-size: 12px; }
+
+  .elements { padding: 60px 0 80px; }
+  .elements-grid { grid-template-columns: 1fr; padding: 0 16px; gap: 30px; }
+  .elements-header { padding: 0 16px; margin-bottom: 40px; }
+  .card-element-name { font-size: 32px; }
+  .card-color { font-size: 9px; }
+  .card-price { font-size: 10px; }
+  .card-cta {
+    padding: 12px 20px;
+    font-size: 8px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .material-story {
+    padding: 80px 16px;
+    border-top: 1px solid var(--line);
+  }
+  .story-headline { font-size: clamp(32px, 5vw, 52px); }
+  .story-sub { font-size: 12px; max-width: 100%; }
+  .story-specs {
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .spec { gap: 6px; }
+  .spec-label { font-size: 8px; }
+  .spec-val { font-size: 18px; }
+  .spec-divider { display: none; }
+
+  .newsletter { padding: 80px 16px; }
+  .newsletter-heading { font-size: clamp(32px, 5vw, 56px); }
+  .newsletter-sub { font-size: 11px; margin-bottom: 40px; }
+  .newsletter-field input { font-size: 12px; padding: 14px 0; }
+  .newsletter-field button {
+    font-size: 9px;
+    padding: 14px 0 14px 16px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-inner { padding: 0 24px; }
-  .material-story { padding: 100px 24px; }
-  .newsletter { padding: 100px 24px; }
+  .footer-inner { padding: 0 16px; }
+  .footer-col-heading { font-size: 8px; }
+  .footer-col-link { font-size: 9px; padding: 8px 0; }
 
   .modal-body { grid-template-columns: 1fr; }
-  .modal-img-wrap { aspect-ratio: 4/3; }
-  .modal-details { padding: 32px 24px; }
-  .modal-name { font-size: 40px; }
+  .modal-img-wrap { aspect-ratio: 3/4; }
+  .modal-details {
+    padding: 28px 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  .modal-name { font-size: clamp(32px, 5vw, 48px); }
+  .modal-color { font-size: 10px; }
+  .modal-desc { font-size: 12px; }
+  .modal-element-label { font-size: 8px; }
+  .modal-sizes label { font-size: 9px; }
+  .size-buttons { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .size-btn {
+    padding: 10px 6px;
+    font-size: 10px;
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .size-btn small { font-size: 8px; margin-top: 2px; }
+  .modal-spec { padding: 12px 0; }
+  .modal-spec span:first-child { font-size: 9px; }
+  .modal-spec span:last-child { font-size: 11px; }
+  .modal-price { font-size: 32px; }
+  .btn-primary {
+    padding: 14px 16px;
+    font-size: 9px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-  .story-specs { gap: 24px; }
-  .spec-divider { display: none; }
+  .elements-featured {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+  .cosmos-twin { grid-template-columns: 1fr; }
+  .featured-aside { padding: 40px 20px; }
+  .featured-name { font-size: clamp(44px, 5vw, 72px); }
+  .featured-desc { font-size: 13px; }
 }
 
 @media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .hero-eyebrow { font-size: 9px; letter-spacing: 0.2em; }
+  .nav-inner { padding: 0 12px; height: 60px; }
+  .nav-logo { font-size: 28px; }
+  .mobile-menu-btn { width: 44px; height: 44px; }
+
+  .hero { min-height: 500px; padding: 0 12px; }
+  .hero-headline { font-size: clamp(40px, 12vw, 70px); }
+  .hero-content { padding: 0 12px; }
+  .btn-ghost { margin-top: 24px; padding: 11px 28px; }
+
+  .marquee-track { gap: 20px; }
+
+  .craftsmanship { padding: 60px 0; }
+  .craft-inner { padding: 0 12px; gap: 24px; }
+  .craft-quote { font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 20px; }
+  .craft-article { padding: 32px 0; }
+  .craft-article h3 { font-size: clamp(18px, 1.8vw, 24px); margin-bottom: 12px; }
+  .craft-article p { font-size: 11px; line-height: 1.7; margin-bottom: 16px; }
+
+  .elements-grid {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+    gap: 20px;
+  }
+  .elements-header { padding: 0 12px; margin-bottom: 30px; }
+
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-inner { padding: 0 12px; }
+
+  .material-story { padding: 60px 12px; }
+  .story-headline { font-size: clamp(28px, 4.5vw, 40px); margin-bottom: 30px; }
+  .story-specs { gap: 20px; }
+
+  .newsletter { padding: 60px 12px; }
+  .newsletter-heading { font-size: clamp(28px, 4.5vw, 44px); }
+  .newsletter-inner { max-width: 100%; }
+
+  .cart-section { padding: 60px 12px; }
+  .cart-item { grid-template-columns: 70px 1fr 28px; gap: 12px; }
+  .cart-item img { width: 70px; }
+  .remove-btn { width: 28px; height: 28px; font-size: 16px; }
+  .cart-summary { padding: 20px; }
+
+  .modal-details { padding: 20px 12px; }
+  .size-buttons { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .modal-spec { padding: 10px 0; }
+
+  .featured-aside { padding: 32px 16px; }
 }
 
 /* Expanded article state */
@@ -1196,20 +1379,38 @@ article.expanded p {
 
 /* Modal responsive */
 @media (max-width: 768px) {
+  .modal {
+    max-height: 88vh;
+    border-radius: 8px;
+  }
+
   .modal-body {
     grid-template-columns: 1fr;
+    max-height: none;
+    overflow: visible;
   }
-  
+
   .modal-details {
-    padding: 32px 24px;
+    padding: 28px 16px;
+    max-height: none;
+    overflow: visible;
   }
-  
+
   .modal-img-wrap {
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/4;
+    max-height: 50vh;
   }
 
   .size-buttons {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .modal-sizes {
+    margin-bottom: 24px;
+  }
+
+  .modal-specs {
+    margin-bottom: 20px;
   }
 }
 
@@ -1296,14 +1497,19 @@ article.expanded p {
 }
 
 .remove-btn {
-  width: 32px;
-  height: 32px;
+  min-width: 40px;
+  min-height: 40px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--line);
   background: transparent;
   color: var(--muted);
   cursor: pointer;
   font-size: 18px;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .remove-btn:hover {
